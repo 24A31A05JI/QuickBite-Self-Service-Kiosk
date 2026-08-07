@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickBite - Self Service Kiosk</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <span>🍔</span>
+            <h1>QuickBite</h1>
+        </div>
+
+        <p>Order Smart. Eat Fresh. Skip the Queue.</p>
+    </header>
+
+
+    <!-- Main Container -->
+    <main>
+
+        <!-- Menu Section -->
+        <section class="menu-section">
+
+            <h2>Welcome to QuickBite 👋</h2>
+            <p class="subtitle">Choose your favorite food</p>
+
+            <!-- Categories -->
+            <div class="categories">
+
+                <button onclick="filterMenu('all')">
+                    All
+                </button>
+
+                <button onclick="filterMenu('meals')">
+                    🍚 Meals
+                </button>
+
+                <button onclick="filterMenu('snacks')">
+                    🍟 Snacks
+                </button>
+
+                <button onclick="filterMenu('burgers')">
+                    🍔 Burgers
+                </button>
+
+                <button onclick="filterMenu('drinks')">
+                    🥤 Drinks
+                </button>
+
+            </div>
+
+
+            <!-- Food Items -->
+            <div id="food-container" class="food-container">
+
+            </div>
+
+        </section>
+
+
+        <!-- Cart Section -->
+        <aside class="cart">
+
+            <h2>🛒 Your Order</h2>
+
+            <div id="cart-items">
+
+                <p class="empty-cart">
+                    Your cart is empty
+                </p>
+
+            </div>
+
+
+            <div class="cart-summary">
+
+                <div>
+                    <span>Subtotal</span>
+                    <span id="subtotal">₹0</span>
+                </div>
+
+                <div>
+                    <span>Tax (5%)</span>
+                    <span id="tax">₹0</span>
+                </div>
+
+                <div class="total">
+                    <span>Total</span>
+                    <span id="total">₹0</span>
+                </div>
+
+            </div>
+
+
+            <button
+                id="checkout-btn"
+                class="checkout-btn"
+                onclick="checkout()"
+            >
+                Proceed to Checkout
+            </button>
+
+        </aside>
+
+    </main>
+
+
+    <!-- Order Confirmation Modal -->
+
+    <div id="order-modal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>Order Confirmed!</h2>
+
+            <p>Your order has been successfully placed.</p>
+
+            <div class="token-box">
+
+                <p>Your Token Number</p>
+
+                <h1 id="token-number">
+                    A101
+                </h1>
+
+            </div>
+
+            <p class="wait-message">
+                Please wait for your token to be called.
+            </p>
+
+            <button onclick="closeModal()">
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
